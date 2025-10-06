@@ -1,0 +1,15 @@
+{
+  "root": "file:///D:/Hearthlink/shared/",
+  "readAllow": [
+    "file:///D:/Hearthlink/shared/**"
+  ],
+  "writeAllow": [
+    "file:///D:/Hearthlink/shared/memory/**",
+    "file:///D:/Hearthlink/shared/scratch/**"
+  ],
+  "deny": [
+    "**/.git/**",
+    "**/*.pem",
+    "**/*.key"
+  ]
+}
