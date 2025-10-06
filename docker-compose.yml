@@ -1,0 +1,18 @@
+services:
+  fs-mcp:
+    build: .
+    environment:
+      - MCP_API_KEY=${MCP_API_KEY}
+      - FS_ROOT=/data
+      - PORT=8080
+      - MAX_BODY=1mb
+      - DENY_GLOBS=**/.git_/**,**/*.pem,**/*.key
+      - WRITE_ALLOW=memory/**,scratch/**
+      - FS_MCP_COMMAND=node
+      - FS_MCP_ARGS=external/modelcontextprotocol/packages/servers/dist/filesystem-stdio.js
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./external:/app/external
+      - ./logs:/app/logs
+      - /absolute/host/path/to/shared:/data
